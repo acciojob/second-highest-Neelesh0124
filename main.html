@@ -13,10 +13,15 @@
 			let n = arr.length;
 			let max = arr[0], second_max = Number.MIN_VALUE;
 			for (let i = 0; i <n; i++) {
-				if(arr[i]>max)
+				if(arr[i]>max){
 					second_max = max;
 					max = arr[i];
+				}
+				else if(arr[i]>second_max){
+				second_max = arr[i];
+			    }
 			}
+			
 			return second_max;
 		}
 
