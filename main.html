@@ -11,7 +11,7 @@
 		function secondHighest(arr) {
 		let n = arr.length;
         arr.sort();
-		if(n>=1 || arr.every(element => element === arr[0]))
+		if(n<=1 || arr.every(element => element === arr[0]))
 		{
 			return infinity;
 		}	
