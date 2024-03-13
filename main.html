@@ -9,24 +9,47 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-		let n = arr.length;
-        arr.sort();
-		if(n<=1 || arr.every(element => element === arr[0]))
-		{
-			return infinity;
-		}	
-        else{let second_largest = 0;
-		for (let i = n - 2; i >= 0; i--) {
-        if (arr[i] != arr[n - 1]) {
-        second_largest = arr[i];
-        break;
-    }
-  }
+			//Write your code here
+			let n = arr.length;
+			let max = arr[0], second_max = Number.MIN_VALUE;
+			if(n==0 || n==1){
+			function secondHighest(arr) {
+	if(arr.length<=1){
+		return -Infinity;
+	}
+			arr.sort((a,b)=> b-a)
+			if(arr[0]==arr[1])
+				return -Infinity;
+			}
+			else if(n>1){
+				let is_same = true;
+				for (let i = 0; i < n; i++) {
+				if (arr[i]!=arr[0]) {
+					is_same = false;
+				}
+			}
+				if (is_same) {
+					return -Infinity;
+				}
+			}
 
-  return second_largest;
-}
-}
-		
+
+			else {
+				for (let i = 0; i <n; i++) {
+				if(arr[i]>max){
+					second_max = max;
+					max = arr[i];
+				}
+				else if(arr[i]>second_max){
+				second_max = arr[i];
+			    }
+			}
+
+			return second_max;
+			}
+			return arr[1];
+	}
+		}	
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
